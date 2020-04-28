@@ -4,6 +4,7 @@ import routers from './routers/index';
 import 'antd/dist/antd.css';
 // import { Button } from 'antd';
 import './static/css/style.css';
+import NotFound from './views/NotFound';
 
 class App extends Component {
 	constructor(props) {
@@ -63,6 +64,8 @@ class App extends Component {
 								}
 							})
 						}
+
+						<Route  component={NotFound} />
 					</Switch>
 				</Router>
 			</div>
