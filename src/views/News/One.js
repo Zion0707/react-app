@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import httpApi from '@/http/index.js';
+
 
 class One extends Component{
     constructor(props){
@@ -15,6 +17,12 @@ class One extends Component{
     }
     componentDidMount(){
         
+        httpApi.httpGet({
+            url:'/light/list',
+            callback:(res)=>{
+                console.log(res);
+            }
+        });
     }
 
     // 删除list子对象
