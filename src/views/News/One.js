@@ -73,7 +73,7 @@ class One extends Component{
             <div className="page">
                 <strong>路灯操作</strong>
 
-                <ul class="mt10">
+                <ul className="mt10">
                     {
                         this.state.list.map((item, index)=>{
                             return <li key={index}>

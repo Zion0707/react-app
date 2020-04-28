@@ -36,7 +36,7 @@ class App extends Component {
 							routers.map((route, key)=>{
 								return <li key={key}>
 											<Link to={route.path} 
-												className={this.state.activeLink===route.path?'active':''} 
+												className={ this.state.activeLink === route.path ? 'active' : '' } 
 												onClick={this.methodsChangeActiveLink.bind(this)}>
 												{route.name}
 											</Link>
