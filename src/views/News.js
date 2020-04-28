@@ -11,33 +11,39 @@ class News extends Component{
 
         return (
             <div className="page">
-                news
-                
                 <Router>
-                    <div>
-                    * <Link to={`${match.url}`}>one</Link>
-                    * <Link to={`${match.url}/two`}>two</Link>
-                    </div>
+                    <div className="content">
 
-                    <Switch>
-                        {
-                            routers.map((route, key) => {
-                                if (route.exact) {
-                                    return <Route key={key} exact path={route.path} 
-                                        render={props=>(
-                                            <route.component {...props} routers={route.routers} />
-                                        )}
-                                    />
-                                } else {
-                                    return <Route key={key} path={route.path} 
-                                        render={props=>(
-                                            <route.component {...props} routers={route.routers} />
-                                        )}
-                                    />
+                        <ul className="slider">
+                            <li>* <Link to={`${match.url}`}>one</Link></li>
+                            <li>* <Link to={`${match.url}/two`}>two</Link></li>
+                        </ul>
+
+                        <div className="main">
+                            <Switch>
+                                {
+                                    routers.map((route, key) => {
+                                        if (route.exact) {
+                                            return <Route key={key} exact path={route.path} 
+                                                render={props=>(
+                                                    <route.component {...props} routers={route.routers} />
+                                                )}
+                                            />
+                                        } else {
+                                            return <Route key={key} path={route.path} 
+                                                render={props=>(
+                                                    <route.component {...props} routers={route.routers} />
+                                                )}
+                                            />
+                                        }
+                                    })
                                 }
-                            })
-                        }
-                    </Switch>
+                            </Switch>
+                        </div>
+
+                    </div>{/* content */}
+                    
+
                 </Router>
             </div>
         )

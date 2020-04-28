@@ -6,13 +6,27 @@ import { Button } from 'antd';
 import './static/css/style.css';
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			activeLink: 0
+		}
+	} 
 	render() {
 		return (
 			<div className="App">
 				<Router>
 					<ul className="nav">
-						<li><Link to="/">Home</Link></li>
-						<li><Link to="/news">News</Link></li>
+						{
+							routers.map((route, key)=>{
+								return <li key={key}>
+											<Link to={route.path} className={window.location.pathname===route.path?'active':''}>
+												{route.name}
+											</Link>
+										</li>
+							})
+						}
+						
 					</ul>
 
 					<Switch>

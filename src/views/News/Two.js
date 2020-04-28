@@ -1,11 +1,11 @@
-import React from 'react';
-function One(){
-    return (
-        <div className="page">
-            two
-
-            
-        </div>
-    )
+import React, { Component } from 'react';
+class Two extends Component{
+    render(){
+        return (
+            <div>
+                two11
+            </div>
+        )
+    }
 }
-export default One;
+export default Two;
