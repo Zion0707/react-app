@@ -2,6 +2,11 @@
     padding: 0;
     margin: 0;
 }
+.mt5{margin-top: 5px;}
+.mt10{margin-top: 10px;}
+.mt15{margin-top: 15px;}
+.mt20{margin-top: 20px;}
+
 .nav{
     background-color: #999;
 }
@@ -23,7 +28,7 @@
     flex: 1;
 }
 .nav .active{
-    color: #000;
+    background-color: #000;
 }
 .slider .active{
     background-color: orangered;

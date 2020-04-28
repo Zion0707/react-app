@@ -24,8 +24,16 @@ export default {
             params: opt.params
         })
         .then((res)=>{
-            var {data}=res;
-            opt.callback && opt.callback(data);
+            var {data, status}=res;
+            if( status === 200 ){
+                if(data.code===0){
+                    opt.callback && opt.callback(data.data);
+                }else{
+                    message.error(data.msg);
+                }
+            }else{
+                message.error('状态错误，状态：'+status);
+            }
         })
         .catch((err)=>{
             opt.error && opt.error(err);
@@ -38,12 +46,19 @@ export default {
             message.error('url是必须的！');
             return;
         }
-        axios.post(`${api}${opt.url}`,{
-            params: opt.params
-        })
-        .then((res)=>{
-            var {data}=res;
-            opt.callback && opt.callback(data);
+        axios.post(`${api}${opt.url}`, 
+            opt.params 
+        ).then((res)=>{
+            var {data, status}=res;
+            if( status === 200){
+                if(data.code===0){
+                    opt.callback && opt.callback(data.data);
+                }else{
+                    message.error(data.msg);
+                }
+            }else{
+                message.error('状态错误，状态：'+status);
+            }
         })
         .catch((err)=>{
             opt.error && opt.error(err);

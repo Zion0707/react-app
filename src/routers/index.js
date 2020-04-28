@@ -11,7 +11,7 @@ let routers = [
     },
     {
         path:'/news',
-        name:'新闻',
+        name:'路灯',
         component: News,
         routers:[
             {
