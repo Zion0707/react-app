@@ -20,7 +20,7 @@ class News extends Component{
 	}
 	
     render() {
-        let {match, routers} = this.props;
+        let { routers } = this.props;
 
         return (
             <div className="page">

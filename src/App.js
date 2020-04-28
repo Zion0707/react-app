@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-// import { withRouter } from 'react-router';
 import routers from './routers/index';
 import 'antd/dist/antd.css';
-import { Button } from 'antd';
+// import { Button } from 'antd';
 import './static/css/style.css';
 
 class App extends Component {
