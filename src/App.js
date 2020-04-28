@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+// import { withRouter } from 'react-router';
 import routers from './routers/index';
 import 'antd/dist/antd.css';
 import { Button } from 'antd';
@@ -9,9 +10,23 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			activeLink: 0
+			activeLink: window.location.pathname
 		}
 	} 
+	
+	// 点击切换url的时候，更改activeLink值
+	methodsChangeActiveLink(){
+		setTimeout(()=>{
+			this.setState({
+				activeLink: window.location.pathname
+			})
+		})
+	}
+	
+	componentDidMount(){
+		
+	}
+
 	render() {
 		return (
 			<div className="App">
@@ -20,7 +35,9 @@ class App extends Component {
 						{
 							routers.map((route, key)=>{
 								return <li key={key}>
-											<Link to={route.path} className={window.location.pathname===route.path?'active':''}>
+											<Link to={route.path} 
+												className={this.state.activeLink===route.path?'active':''} 
+												onClick={this.methodsChangeActiveLink.bind(this)}>
 												{route.name}
 											</Link>
 										</li>

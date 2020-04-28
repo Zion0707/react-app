@@ -15,7 +15,7 @@ let routers = [
         component: News,
         routers:[
             {
-                path:'/news/',
+                path:'/news',
                 name:'栏目一',
                 component: One,
                 exact: true

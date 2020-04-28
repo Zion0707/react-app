@@ -4,8 +4,21 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 class News extends Component{
     constructor(props) {
         super(props);
+        
+        this.state={
+            activeLink: window.location.pathname
+        }
     }
-    
+
+    // 点击切换url的时候，更改activeLink值
+	methodsChangeActiveLink(){
+		setTimeout(()=>{
+			this.setState({
+				activeLink: window.location.pathname
+			})
+		})
+	}
+	
     render() {
         let {match, routers} = this.props;
 
@@ -15,8 +28,15 @@ class News extends Component{
                     <div className="content">
 
                         <ul className="slider">
-                            <li>* <Link to={`${match.url}`}>one</Link></li>
-                            <li>* <Link to={`${match.url}/two`}>two</Link></li>
+                            {
+                                routers.map((route, key)=>{
+                                    return  <li key={key}>
+                                                <Link to={route.path}
+                                                className={ this.state.activeLink === route.path ? 'active' : '' }
+                                                onClick={this.methodsChangeActiveLink.bind(this)}>{route.name}</Link>
+                                            </li>
+                                })
+                            }
                         </ul>
 
                         <div className="main">
