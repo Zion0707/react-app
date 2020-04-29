@@ -6,7 +6,7 @@ let initState = {
     todos: [
 		{
 			id: parseInt(Math.random() * 10000000),
-			isComplete: false,
+			isComplete: true,
 			title: '学习redux'
 		}, {
 			id: parseInt(Math.random() * 10000000),
@@ -31,6 +31,7 @@ function reducer(state=initState,action){
 		  	newState = state;
 		  	break;
 	}
+	
     return newState;
 }
 export default reducer;
