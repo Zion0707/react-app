@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 import TodoList from '@/components/TodoList';
 
-import store from '@/store/index';
-
 class Three extends Component{
     constructor(props){
         super(props);

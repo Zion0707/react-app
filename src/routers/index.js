@@ -4,6 +4,7 @@ import One from '../views/News/One';
 import Two from '../views/News/Two';
 import Three from '../views/News/Three';
 import Four from '../views/News/Four';
+import Five from '../views/News/Five';
 let routers = [
     {
         path:'/',
@@ -36,6 +37,11 @@ let routers = [
                 path:'/news/four',
                 name:'栏目四',
                 component: Four
+            },
+            {
+                path:'/news/five',
+                name:'栏目五',
+                component: Five
             },
         ]
     }

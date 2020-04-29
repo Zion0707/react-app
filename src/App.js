@@ -6,6 +6,7 @@ import 'antd/dist/antd.css';
 import './static/css/style.css';
 import NotFound from './views/NotFound';
 
+
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -23,10 +24,6 @@ class App extends Component {
 		})
 	}
 	
-	componentDidMount(){
-		
-	}
-
 	render() {
 		return (
 			<div className="App">
