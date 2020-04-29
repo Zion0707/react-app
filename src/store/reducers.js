@@ -3,21 +3,7 @@ import { CHANGE_MESSAGE } from '@/store/actions';
 
 //定义默认状态
 let initState = {
-    todos: [
-		{
-			id: parseInt(Math.random() * 10000000),
-			isComplete: true,
-			title: '学习redux'
-		}, {
-			id: parseInt(Math.random() * 10000000),
-			isComplete: true,
-			title: '学习react'
-		}, {
-			id: parseInt(Math.random() * 10000000),
-			isComplete: false,
-			title: '学习node'
-		}
-	],
+    todos: [],
 	message:'Redux 默认值'
 };
 

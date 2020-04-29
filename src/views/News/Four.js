@@ -27,5 +27,5 @@ class Four extends Component{
 }
 
 export default connect((state) => ({
-    ...state //此时的state就是store数据
+    ...state //此时的state就是store数据，并把 store 数据注册到 props 中
 }))(Four);;
