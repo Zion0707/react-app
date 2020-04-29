@@ -11,18 +11,26 @@ class Three extends Component{
                 '电压',
                 '母排'
             ],
-            message:'react is cool！'
+            message:'react is cool！',
+            childText:'',
         }
     }
 
-    dels(index){
-        console.log(index)
+
+    getTodoListState(value){
+        var { childText } = value;
+        this.setState({
+            childText,
+        })
     }
 
     render(){
+        let state = this.state;
         return (
             <div className="page">
-                <TodoList deletes={this.dels} list={this.state.list} message={this.state.message}/>
+                {state.childText}
+                <br/>
+                <TodoList onValue={this.getTodoListState.bind(this)}/>
             </div>
         )
     }
