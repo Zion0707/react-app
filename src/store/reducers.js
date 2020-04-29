@@ -1,5 +1,5 @@
 // 这里主要存数据
-import type from '@/store/actions';
+import { CHANGE_MESSAGE } from '@/store/actions';
 
 //定义默认状态
 let initState = {
@@ -24,7 +24,7 @@ let initState = {
 function reducer(state=initState,action){
 	let newState = JSON.parse(JSON.stringify( initState ));
 	switch (action.type) {
-		case type.CHANGE_MESSAGE:
+		case CHANGE_MESSAGE:
 			newState.message = action.payload
 		break;
 		default:
