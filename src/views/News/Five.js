@@ -15,7 +15,7 @@ class Five extends Component{
 
     // 更改store的message值
     changeStoreMessage(){
-        store.dispatch({type: 'CHANGE_MESSAGE', payload: '更改成了栏目五数据'})
+        store.dispatch({type: 'CHANGE_MESSAGE', data: '更改成了栏目五数据'})
     }
 
     render(){
