@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import TodoList from '@/components/TodoList';
 
+import store from '@/store/index';
+
 class Three extends Component{
     constructor(props){
         super(props);
@@ -11,7 +13,6 @@ class Three extends Component{
                 '电压',
                 '母排'
             ],
-            message:'react is cool！',
             childText:'',
         }
     }
@@ -31,6 +32,7 @@ class Three extends Component{
                 {state.childText}
                 <br/>
                 <TodoList onValue={this.getTodoListState.bind(this)}/>
+                <br/>
             </div>
         )
     }
