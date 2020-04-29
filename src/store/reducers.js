@@ -1,4 +1,5 @@
-import type from '@/store/actions/action-types';
+// 这里主要存数据
+import type from '@/store/actions';
 
 //定义默认状态
 let initState = {
