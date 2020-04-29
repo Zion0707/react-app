@@ -6,17 +6,16 @@ import store from '@/store/index';
 class Five extends Component{
     constructor(props){
         super(props);
-
-        console.log(store.getState());
     }
+
+    //获取store的message值 
     getStoreMsg() {
         return this.props.message;
     }
 
+    // 更改store的message值
     changeStoreMessage(){
-        store.dispatch({type: 'CHANGE_MESSAGE', payload: '数据'})
-
-        console.log(store.getState());
+        store.dispatch({type: 'CHANGE_MESSAGE', payload: '更改成了栏目五数据'})
     }
 
     render(){
