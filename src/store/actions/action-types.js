@@ -1,1 +1,3 @@
-const CHANGE_MESSAGE = 'CHANGE_MESSAGE';
+export default {
+    CHANGE_MESSAGE:'CHANGE_MESSAGE'
+}

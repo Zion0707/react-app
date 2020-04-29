@@ -1,4 +1,4 @@
-import { CHANGE_MESSAGE } from '@/store/actions/action-types';
+import type from '@/store/actions/action-types';
 
 //定义默认状态
 let initState = {
@@ -17,22 +17,19 @@ let initState = {
 			title: '学习node'
 		}
 	],
-	message:'Redux 理解'
+	message:'Redux 默认值'
 };
 
 function reducer(state=initState,action){
-	let newState;
+	let newState = JSON.parse(JSON.stringify( initState ));
 	switch (action.type) {
-		case CHANGE_MESSAGE:
-			newState = {
-				message: action.payload
-			};
+		case type.CHANGE_MESSAGE:
+			newState.message = action.payload
 		break;
 		default:
 		  	newState = state;
 		  	break;
-	  }
-
+	}
     return newState;
 }
 export default reducer;

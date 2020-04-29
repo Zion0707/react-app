@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 
 import {connect} from 'react-redux';
+import store from '@/store/index';
 
 class Five extends Component{
-    
+    constructor(props){
+        super(props);
+
+        console.log(store.getState());
+    }
     getStoreMsg() {
         return this.props.message;
     }
 
     changeStoreMessage(){
-        console.log(11)
+        store.dispatch({type: 'CHANGE_MESSAGE', payload: '数据'})
+
+        console.log(store.getState());
     }
 
     render(){
