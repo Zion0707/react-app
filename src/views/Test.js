@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DatePicker } from 'antd';
+import { Button } from 'antd';
 
 import {connect} from 'react-redux';
 import store from '@/store/index';
@@ -28,7 +28,7 @@ class Test extends Component{
                     }
                 </ul>
 
-                <button onClick={this.delTodos.bind(this)}>删除</button>
+                <Button type="primary" onClick={this.delTodos.bind(this)}>删除</Button>
             </div>
         )
     }
