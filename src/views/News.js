@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 
 class News extends Component{
     constructor(props) {
@@ -10,15 +10,6 @@ class News extends Component{
         }
     }
 
-    // 点击切换url的时候，更改activeLink值
-	methodsChangeActiveLink(){
-		setTimeout(()=>{
-			this.setState({
-				activeLink: window.location.pathname
-			})
-		})
-	}
-	
     render() {
         let { routers } = this.props;
 
@@ -31,9 +22,7 @@ class News extends Component{
                             {
                                 routers.map((route, key)=>{
                                     return  <li key={key}>
-                                                <Link to={route.path}
-                                                className={ this.state.activeLink === route.path ? 'active' : '' }
-                                                onClick={this.methodsChangeActiveLink.bind(this)}>{route.name}</Link>
+                                                <NavLink to={route.path} exact activeClassName="active">{route.name}</NavLink>
                                             </li>
                                 })
                             }
