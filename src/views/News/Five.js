@@ -4,9 +4,9 @@ import {connect} from 'react-redux';
 import store from '@/store/index';
 
 class Five extends Component{
-    constructor(props){
-        super(props);
-    }
+    // constructor(props){
+    //     super(props);
+    // }
 
     //获取store的message值 
     getStoreMsg() {

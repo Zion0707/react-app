@@ -1,10 +1,14 @@
 import Home from '../views/Home';
+
 import News from '../views/News';
 import One from '../views/News/One';
 import Two from '../views/News/Two';
 import Three from '../views/News/Three';
 import Four from '../views/News/Four';
 import Five from '../views/News/Five';
+
+import Test from '../views/Test';
+
 let routers = [
     {
         path:'/',
@@ -44,7 +48,12 @@ let routers = [
                 component: Five
             },
         ]
-    }
+    },
+    {
+        path:'/test',
+        name:'测试',
+        component: Test,
+    },
 ];
 
 export default routers;
