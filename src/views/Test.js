@@ -11,17 +11,18 @@ class Test extends Component{
     }
 
     delTodos(){
-        var arr = this.getStoreTodos()
+        var arr = this.getStoreTodos();
         arr.splice(0, 1);
         store.dispatch({type:'DELETE_TODO', data: arr});
     }
 
     render(){
+        let todos = this.getStoreTodos();
         return(
             <div style={{padding:'20px'}}>  
                 <ul>
                     {   
-                        this.getStoreTodos().map((item, index)=>{
+                        todos.map((item, index)=>{
                             return <li key={index}>{item.name}</li>
                         })
                     }

@@ -14,7 +14,12 @@ class App extends Component {
 			activeLink: window.location.pathname
 		}
 	} 
-	
+
+	// 清除存储
+	clearStorage(){
+		localStorage.clear();
+	}
+
 	render() {
 		return (
 			<div className="App">
@@ -29,7 +34,7 @@ class App extends Component {
 										</li>
 							})
 						}
-						
+						<li style={{float:'right', cursor:'pointer'}} onClick={ this.clearStorage.bind(this) }>清除存储</li>
 					</ul>
 
 					<Switch>
