@@ -6,9 +6,13 @@ const { SubMenu } = Menu;
 class Nav extends Component{
     constructor(props) {
         super(props);
+
         this.state = {
             collapsed: false,
             navMapList: this.props.child,
+            openKeys:[],
+            path:'',
+            pathname:'',
         };
     }
     
@@ -53,26 +57,42 @@ class Nav extends Component{
         });
     }
     
-
+    // 点击菜单的时候,展开监测
     onOpenChange=(openKeys)=>{
-        console.log(openKeys);
+        const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
+        this.setState({
+            openKeys: latestOpenKey ? [latestOpenKey] : [],
+        });
+    }
+
+
+    componentWillMount(){
+
+        // 定义 menu 展开
+        const { location } = this.props;
+        const { pathname } = location;
+        const path = pathname.substring(0, pathname.lastIndexOf('/'));
+        this.setState({
+            path:path,
+            pathname:pathname
+        })
+        this.onOpenChange([path]);
     }
 
     render() {
         const { collapsed, navMapList } = this.state;
-        const { location, match } = this.props;
-        const { pathname } = location;
-        const path = pathname.substring(0, pathname.lastIndexOf('/'));
+
         return (
             <div className="app-nav">
                 <Router>
                     <Menu
                         style={{width:230}}
-                        defaultSelectedKeys={[pathname]}
-                        defaultOpenKeys={[path]}
+                        defaultSelectedKeys={[this.state.pathname]}
+                        defaultOpenKeys={[this.state.path]}
                         mode="inline"
                         theme="dark"
                         inlineCollapsed={collapsed}
+                        openKeys={this.state.openKeys}
                         onOpenChange={this.onOpenChange}
                     >
                         { this.getNav(navMapList) }
