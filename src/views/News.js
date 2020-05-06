@@ -2,17 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 
 class News extends Component{
-    constructor(props) {
-        super(props);
-        
-        this.state={
-            activeLink: window.location.pathname
-        }
-    }
-
     render() {
-        let { routers } = this.props;
-
+        let { child } = this.props;
         return (
             <div className="page">
                 <Router>
@@ -20,7 +11,7 @@ class News extends Component{
 
                         <ul className="slider">
                             {
-                                routers.map((route, key)=>{
+                                child.map((route, key)=>{
                                     return  <li key={key}>
                                                 <NavLink to={route.path} exact activeClassName="active">{route.name}</NavLink>
                                             </li>
@@ -31,7 +22,7 @@ class News extends Component{
                         <div className="main">
                             <Switch>
                                 {
-                                    routers.map((route, key) => {
+                                    child.map((route, key) => {
                                         if (route.exact) {
                                             return <Route key={key} exact path={route.path} 
                                                 render={props=>(

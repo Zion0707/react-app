@@ -1,4 +1,4 @@
-## React 开箱即用
+## `React 开箱即用`
 
 采用 create-react-app 进行搭建。
 

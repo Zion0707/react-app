@@ -1,70 +1,87 @@
 import React, { Component } from 'react';
-
+import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import { Menu } from 'antd';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 const { SubMenu } = Menu;
 
 class Nav extends Component{
-    // constructor(props){
-    //     super(props)
-    // }
-
-    handleClick=e=>{
-        console.log('click ', e);
-    };
-    render(){
-        return (
-            <>      
-                <Menu
-                    onClick={this.handleClick}
-                    style={{ width: 256 }}
-                    defaultSelectedKeys={['1']}
-                    defaultOpenKeys={['sub1']}
-                    mode="inline"
+    constructor(props) {
+        super(props);
+        this.state = {
+            collapsed: false,
+            navMapList: this.props.child,
+        };
+    }
+    
+    // 渲染nav
+    getNav(navMapList) {
+        return navMapList.map((nav) => {
+            return nav.child ? (
+                <SubMenu
+                    key={nav.path}
+                    title={
+                        <span>
+                            <i className={`action iconfont ${nav.icon}`}></i>
+                            <span>{nav.name}</span>
+                        </span>
+                    }
                 >
-                    <SubMenu
-                        key="sub1"
-                        title={
-                            <span>
-                            <MailOutlined />
-                            <span>Navigation One</span>
-                            </span>
-                        }
+                    {this.getNav(nav.child)}
+                </SubMenu>
+            ) : (
+                <Menu.Item key={nav.path}>
+                    <NavLink to={nav.path}>
+                        {nav.icon && <i className={`action iconfont ${nav.icon}`}></i>}
+                        <span>{nav.name}</span>
+                    </NavLink>
+                </Menu.Item>
+            );
+        });
+    }
+
+    // 渲染nav内容
+    getNavCon(navMapList){
+        // 利用递归形式渲染深层
+        return navMapList.map((route, key) => {
+            return route.child ? 
+                ( this.getNavCon(route.child) ) 
+                : 
+                (<Route key={key} exact={route.exact} path={route.path} 
+                    render={props=>(
+                        <route.component {...props} routers={route.routers} />
+                    )}
+                />)
+        });
+    }
+    
+    render() {
+        const { collapsed, navMapList } = this.state;
+        const { location, match } = this.props;
+        const { pathname } = location;
+        const { path } = match;
+
+        return (
+            <div className="app-nav">
+                <Router>
+                    <Menu
+                        style={{width:230}}
+                        defaultSelectedKeys={[pathname]}
+                        defaultOpenKeys={[path]}
+                        mode="inline"
+                        theme="dark"
+                        inlineCollapsed={collapsed}
                     >
-                        <Menu.ItemGroup key="g1" title="Item 1">
-                            <Menu.Item key="1">Option 1</Menu.Item>
-                            <Menu.Item key="2">Option 2</Menu.Item>
-                        </Menu.ItemGroup>
-                        <Menu.ItemGroup key="g2" title="Item 2">
-                            <Menu.Item key="3">Option 3</Menu.Item>
-                            <Menu.Item key="4">Option 4</Menu.Item>
-                        </Menu.ItemGroup>
-                    </SubMenu>
-                    <SubMenu key="sub2" icon={<AppstoreOutlined />} title="Navigation Two">
-                        <Menu.Item key="5">Option 5</Menu.Item>
-                        <Menu.Item key="6">Option 6</Menu.Item>
-                        <SubMenu key="sub3" title="Submenu">
-                            <Menu.Item key="7">Option 7</Menu.Item>
-                            <Menu.Item key="8">Option 8</Menu.Item>
-                        </SubMenu>
-                    </SubMenu>
-                    <SubMenu
-                        key="sub4"
-                        title={
-                            <span>
-                            <SettingOutlined />
-                            <span>Navigation Three</span>
-                            </span>
-                        }
-                        >
-                        <Menu.Item key="9">Option 9</Menu.Item>
-                        <Menu.Item key="10">Option 10</Menu.Item>
-                        <Menu.Item key="11">Option 11</Menu.Item>
-                        <Menu.Item key="12">Option 12</Menu.Item>
-                    </SubMenu>
-                </Menu>
-            </>
-        )
+                        { this.getNav(navMapList) }
+                    </Menu>
+
+
+                    <div className="main">
+                        <Switch>
+                            { this.getNavCon(navMapList) }
+                        </Switch>
+                    </div>
+                </Router>
+          </div>
+        );
     }
 }
 

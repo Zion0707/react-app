@@ -9,13 +9,7 @@ import NotFound from './views/NotFound';
 
 
 class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			activeLink: window.location.pathname
-		}
-	} 
-
+	
 	// 清除存储
 	clearStorage(){
 		localStorage.clear();
@@ -44,13 +38,13 @@ class App extends Component {
 								if (route.exact) {
 									return <Route key={key} exact path={route.path} 
 										render={props=>(
-											<route.component {...props} routers={route.routers} />
+											<route.component {...props} child={route.child} />
 										)}
 									/>
 								} else {
 									return <Route key={key} path={route.path} 
 										render={props=>(
-											<route.component {...props} routers={route.routers} />
+											<route.component {...props} child={route.child} />
 										)}
 									/>
 								}
