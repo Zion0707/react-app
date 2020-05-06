@@ -84,14 +84,13 @@ let routers = [
                         name:'栏目二-1',
                         icon:'yi-icon',
                         component: NavTwo,
-                        exact: true
+                        exact: true,
                     },
                     {
                         path:'/nav/two/two',
                         name:'栏目二-2',
                         icon:'yi-icon',
                         component: NavTwo,
-                        exact: true
                     },
                 ]
             },
@@ -112,7 +111,6 @@ let routers = [
                         name:'栏目四-2',
                         icon:'yi-icon',
                         component: NavTwo,
-                        exact: true
                     },
                 ]
             },

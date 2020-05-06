@@ -53,6 +53,11 @@ class Nav extends Component{
         });
     }
     
+
+    onOpenChange=(openKeys)=>{
+        console.log(openKeys);
+    }
+
     render() {
         const { collapsed, navMapList } = this.state;
         const { location, match } = this.props;
@@ -68,6 +73,7 @@ class Nav extends Component{
                         mode="inline"
                         theme="dark"
                         inlineCollapsed={collapsed}
+                        onOpenChange={this.onOpenChange}
                     >
                         { this.getNav(navMapList) }
                     </Menu>
