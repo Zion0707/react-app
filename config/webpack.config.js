@@ -122,7 +122,6 @@ module.exports = function(webpackEnv) {
       if (preProcessor === "less-loader") {
         loader.options.modifyVars = {
           'primary-color' : '#1DA57A',
-          'border-radius-base': '130px',
           // 'btn-primary-bg': '#FF2A8E',
           // 'btn-default-bg': '#6236FF',
           // 'menu-dark-bg':'linear-gradient(#64687D,#3D415A)',
