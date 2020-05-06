@@ -8,6 +8,7 @@ import Four from '../views/News/Four';
 import Five from '../views/News/Five';
 
 import Test from '../views/Test';
+import Nav from '../views/Nav';
 
 let routers = [
     {
@@ -53,6 +54,11 @@ let routers = [
         path:'/test',
         name:'测试',
         component: Test,
+    },
+    {
+        path:'/nav',
+        name:'导航',
+        component: Nav,
     },
 ];
 
