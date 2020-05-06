@@ -57,8 +57,7 @@ class Nav extends Component{
         const { collapsed, navMapList } = this.state;
         const { location, match } = this.props;
         const { pathname } = location;
-        const { path } = match;
-
+        const path = pathname.substring(0, pathname.lastIndexOf('/'));
         return (
             <div className="app-nav">
                 <Router>

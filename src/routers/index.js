@@ -86,6 +86,34 @@ let routers = [
                         component: NavTwo,
                         exact: true
                     },
+                    {
+                        path:'/nav/two/two',
+                        name:'栏目二-2',
+                        icon:'yi-icon',
+                        component: NavTwo,
+                        exact: true
+                    },
+                ]
+            },
+            {
+                path:'/nav/four',
+                name:'栏目四',
+                icon:'er-icon',
+                child:[
+                    {
+                        path:'/nav/four/one',
+                        name:'栏目四-1',
+                        icon:'yi-icon',
+                        component: NavTwo,
+                        exact: true
+                    },
+                    {
+                        path:'/nav/four/two',
+                        name:'栏目四-2',
+                        icon:'yi-icon',
+                        component: NavTwo,
+                        exact: true
+                    },
                 ]
             },
             {
