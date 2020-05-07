@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import TodoList from '@/components/TodoList';
+import Hooks from '@/components/Hooks';
 
 class Three extends Component{
     constructor(props){
@@ -31,6 +32,9 @@ class Three extends Component{
                 <br/>
                 <TodoList onValue={this.getTodoListState.bind(this)}/>
                 <br/>
+                <br/>
+                <br/>
+                <Hooks/>
             </div>
         )
     }
