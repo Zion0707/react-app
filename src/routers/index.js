@@ -1,17 +1,17 @@
-import Home from '../views/Home';
+import Home from '../pages/Home';
 
-import News from '../views/News';
-import NewsOne from '../views/News/One';
-import NewsTwo from '../views/News/Two';
-import NewsThree from '../views/News/Three';
-import NewsFour from '../views/News/Four';
-import NewsFive from '../views/News/Five';
+import News from '../pages/News';
+import NewsOne from '../pages/News/One';
+import NewsTwo from '../pages/News/Two';
+import NewsThree from '../pages/News/Three';
+import NewsFour from '../pages/News/Four';
+import NewsFive from '../pages/News/Five';
 
-import Test from '../views/Test';
-import Nav from '../views/Nav';
-import NavOne from '../views/Nav/One';
-import NavTwo from '../views/Nav/Two';
-import NavThree from '../views/Nav/Three';
+import Test from '../pages/Test';
+import Nav from '../pages/Nav';
+import NavOne from '../pages/Nav/One';
+import NavTwo from '../pages/Nav/Two';
+import NavThree from '../pages/Nav/Three';
 
 let routers = [
     {
