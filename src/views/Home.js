@@ -10,7 +10,7 @@ class Home extends Component {
 		return (
             <div className="page">
                 home
-                <button onClick={this.clickMyBtn.bind(this)}>点击</button>
+                <button className="my-btn" onClick={this.clickMyBtn.bind(this)}>点击</button>
             </div>
         )
     }

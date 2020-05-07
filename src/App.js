@@ -4,7 +4,7 @@ import routers from './routers/index';
 import 'antd/dist/antd.css';
 // import { Button } from 'antd';
 import './static/css/theme.less';
-import './static/css/style.css';
+import './static/css/style.less';
 import NotFound from './views/NotFound';
 
 
