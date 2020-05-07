@@ -92,8 +92,8 @@ class Nav extends Component{
                         mode="inline"
                         theme="dark"
                         inlineCollapsed={collapsed}
-                        openKeys={this.state.openKeys}
-                        onOpenChange={this.onOpenChange}
+                        // openKeys={this.state.openKeys}
+                        // onOpenChange={this.onOpenChange}
                     >
                         { this.getNav(navMapList) }
                     </Menu>

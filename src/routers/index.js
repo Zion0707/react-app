@@ -90,7 +90,22 @@ let routers = [
                         path:'/nav/two/two',
                         name:'栏目二-2',
                         icon:'yi-icon',
-                        component: NavTwo,
+                        // component: NavTwo,
+                        child:[
+                            {
+                                path:'/nav/two/two/one',
+                                name:'栏目二-2-1',
+                                icon:'yi-icon',
+                                component: NavTwo,
+                                exact: true,
+                            },
+                            {
+                                path:'/nav/two/two/two',
+                                name:'栏目二-2-2',
+                                icon:'yi-icon',
+                                component: NavTwo,
+                            },
+                        ]
                     },
                 ]
             },
