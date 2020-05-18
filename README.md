@@ -11,5 +11,3 @@ create-react-app 版本为 v3.4.1。
 ### `yarn test`
 
 ### `yarn build`
-
-### `yarn eject`
