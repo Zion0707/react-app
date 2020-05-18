@@ -1,4 +1,4 @@
-## `React 开箱即用`
+## `React 开箱即用 PC版`
 
 采用 create-react-app 进行搭建。
 
@@ -6,10 +6,10 @@ create-react-app 版本为 v3.4.1。
 
 集成了 react-router-dom + redux + antd 。
 
-### `npm start`
+### `yarn start`
 
-### `npm test`
+### `yarn test`
 
-### `npm run build`
+### `yarn build`
 
-### `npm run eject`
+### `yarn eject`
