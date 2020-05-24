@@ -1,10 +1,6 @@
-## `React 开箱即用 PC版`
+## `由create-react-app 创建的 react + redux + antd + axios 骨架，开箱即用`
 
-采用 create-react-app 进行搭建。
-
-create-react-app 版本为 v3.4.1。
-
-集成了 react-router-dom + redux + antd 。
+1、redux 已经添加 redux-persist 数据持久化插件
 
 ### `yarn start`
 
