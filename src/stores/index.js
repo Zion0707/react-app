@@ -12,6 +12,7 @@ const persistConfig = {
 const reducers = combineReducers({
     // home 模块数据
     home: homeReducer,
+    // 往下添加其它模块
 });
 
 const myPersistReducer = persistReducer(persistConfig, reducers);
