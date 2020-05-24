@@ -1,13 +1,17 @@
-## `React 开箱即用 PC版`
+### react 移动端架构，开箱即用
 
-采用 create-react-app 进行搭建。
-
-create-react-app 版本为 v3.4.1。
-
-集成了 react-router-dom + redux + antd 。
+采用 create-react-app + antd-mobile 进行搭建
 
 ### `yarn start`
 
 ### `yarn test`
 
 ### `yarn build`
+
+### 添加的类库有
+
+1、axios
+
+2、immutable
+
+3、mockjs
