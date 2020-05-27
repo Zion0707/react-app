@@ -8,6 +8,9 @@ class Detail extends Component {
     componentDidMount() {
         console.log('加载...');
     }
+    handlePop = () => {
+        this.props.history.goBack();
+    }
     render() {
         return (
             <div className="child-page">

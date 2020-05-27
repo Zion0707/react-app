@@ -12,7 +12,7 @@ class Center extends Component {
     }
     componentDidMount() {}
     render() {
-        let { routes, location, history } = this.props;
+        const { routes, location, history } = this.props;
         return (
             <>
                 <div className="center">

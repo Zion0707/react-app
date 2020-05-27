@@ -27,12 +27,12 @@ const routers = [
                 exact: true,
                 child: [
                     {
-                        name:'中心一 - 详情',
+                        name: '中心一详情',
                         path: '/center/one/detail',
                         component: CtOneDetail,
                         exact: true,
-                        child:[]
-                    }
+                        child: [],
+                    },
                 ],
             },
             {
