@@ -4,6 +4,7 @@
 import Home from '@/pages/home';
 import Center from '@/pages/center';
 import CtOne from '@/pages/center/ct-one';
+import CtOneDetail from '@/pages/center/ct-one/detail';
 import CtTwo from '@/pages/center/ct-two';
 
 const nav = [
@@ -12,25 +13,33 @@ const nav = [
         path: '/',
         component: Home,
         exact: true,
-        children: [],
+        child: [],
     },
     {
         name: '中心',
         path: '/center',
         component: Center,
-        children: [
+        child: [
             {
                 name: '中心一',
                 path: '/center/one',
                 component: CtOne,
                 exact: true,
-                children: [],
+                child: [
+                    {
+                        name:'中心一 - 详情',
+                        path: '/center/one/detail',
+                        component: CtOneDetail,
+                        exact: true,
+                        child:[]
+                    }
+                ],
             },
             {
                 name: '中心二',
                 path: '/center/two',
                 component: CtTwo,
-                children: [],
+                child: [],
             },
         ],
     },

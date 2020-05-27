@@ -12,7 +12,7 @@ class Center extends Component {
     }
     componentDidMount() {}
     render() {
-        let { routes } = this.props;
+        let { routes, location, history } = this.props;
         return (
             <>
                 <div className="center">
@@ -34,35 +34,34 @@ class Center extends Component {
                         childFactory={(child) =>
                             React.cloneElement(child, {
                                 classNames:
-                                    this.props.history.action === 'PUSH'
+                                    history.action === 'PUSH'
                                         ? 'page-push'
                                         : 'page-pop',
                             })
                         }
                     >
                         <CSSTransition
-                            key={this.props.location.pathname}
+                            key={location.pathname}
                             timeout={500}
                             classNames={
-                                this.props.history.action === 'PUSH'
+                                history.action === 'PUSH'
                                     ? 'page-push'
                                     : 'page-pop'
                             }
                         >
-                            <Switch location={this.props.location}>
+                            <Switch location={location}>
                                 {routes.map((route, key) => {
                                     return (
                                         <Route
                                             key={key}
                                             exact={route.exact}
                                             path={route.path}
-                                            component={route.component}
-                                            // render={(props) => (
-                                            //     <route.component
-                                            //         {...props}
-                                            //         routes={route.children}
-                                            //     />
-                                            // )}
+                                            render={(props) => (
+                                                <route.component
+                                                    {...props}
+                                                    routes={route.child}
+                                                />
+                                            )}
                                         />
                                     );
                                 })}

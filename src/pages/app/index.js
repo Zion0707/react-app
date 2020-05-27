@@ -27,7 +27,7 @@ class App extends Component {
                                     render={(props) => (
                                         <route.component
                                             {...props}
-                                            routes={route.children}
+                                            routes={route.child}
                                         />
                                     )}
                                 />
