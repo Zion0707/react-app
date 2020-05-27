@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Test from '@/pages/test';
-import navs from '@/routers/';
+import routers from '@/routers';
 
 class App extends Component {
     constructor(props) {
@@ -18,7 +18,7 @@ class App extends Component {
             <>
                 <Router>
                     <div className="page">
-                        {navs.map((route, key) => {
+                        {routers.map((route, key) => {
                             return (
                                 <Route
                                     key={key}
@@ -36,7 +36,7 @@ class App extends Component {
                         <Route path="/test" component={Test} />
                     </div>
                     <div className="nav">
-                        {navs.map((route, key) => {
+                        {routers.map((route, key) => {
                             return (
                                 <Link
                                     key={key}

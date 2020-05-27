@@ -7,7 +7,7 @@ import CtOne from '@/pages/center/ct-one';
 import CtOneDetail from '@/pages/center/ct-one/detail';
 import CtTwo from '@/pages/center/ct-two';
 
-const nav = [
+const routers = [
     {
         name: '首页',
         path: '/',
@@ -45,4 +45,4 @@ const nav = [
     },
 ];
 
-export default nav;
+export default routers;

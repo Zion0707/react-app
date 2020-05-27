@@ -12,6 +12,7 @@ class CtOne extends Component {
     };
     render() {
         const { routes } = this.props;
+        console.log(routes);
         return (
             <div className="child-page">
                 <button onClick={this.handlePop.bind(this)}>返回</button>

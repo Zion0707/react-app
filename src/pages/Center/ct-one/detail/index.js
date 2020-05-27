@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
-class Detail extends Component{
+class Detail extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+    componentDidMount() {
+        console.log('加载...');
+    }
     render() {
         return (
             <div className="child-page">
