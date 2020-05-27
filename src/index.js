@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import store from '@/stores';
 import App from '@/pages/app';
 import 'antd/dist/antd.css';
-import '@/static/less/index.less';
+import '@/static/less/app.less';
 
 function renderPage() {
     ReactDOM.render(<App store={store} />, document.getElementById('root'));
