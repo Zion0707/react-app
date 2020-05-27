@@ -1,8 +1,59 @@
-@import './conn.less';
+@import './config.less';
 
 body {
     background-color: #ffffff;
 }
+
+// 转场动画start
+// push
+.page-push-enter {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.page-push-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 500ms ease;
+}
+
+.page-push-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.page-push-exit-active {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 500ms ease;
+}
+
+// pop
+.page-pop-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.page-pop-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 500ms ease;
+}
+
+.page-pop-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.page-pop-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 500ms ease;
+}
+// 转场动画end 
+
+
+
 #root {
     width: 100vw;
     height: 100vh;
