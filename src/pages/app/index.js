@@ -5,10 +5,10 @@ import {
     BrowserRouter as Router,
 } from 'react-router-dom';
 
-import Test from '@/pages/Test';
-import navs from '@/routers/navs';
+import Test from '@/pages/test';
+import navs from '@/routers/';
 
-class Index extends Component {
+class App extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -54,4 +54,4 @@ class Index extends Component {
         );
     }
 }
-export default Index;
+export default App;

@@ -1,10 +1,10 @@
 // import React from 'react';
 // import Loadable from 'react-loadable';
 
-import Home from '@/pages/Home';
-import Center from '@/pages/Center';
-import CtOne from '@/pages/Center/ct-one';
-import CtTwo from '@/pages/Center/ct-two';
+import Home from '@/pages/home';
+import Center from '@/pages/center';
+import CtOne from '@/pages/center/ct-one';
+import CtTwo from '@/pages/center/ct-two';
 
 const nav = [
     {
