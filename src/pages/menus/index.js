@@ -38,7 +38,7 @@ class Menus extends Component {
     }
     // 选择menus页面内容
     getMenusCon(routers) {
-        // 利用递归形式渲染深层
+        // 利用递归形式渲染深层，把深层component铺开成为一层
         return routers.map((item, key) => {
             return item.child.length ? (
                 this.getMenusCon(item.child)
@@ -54,20 +54,57 @@ class Menus extends Component {
             );
         });
     }
+    //获取当前menus要展开的父级菜单
+    getDefaultOpenKeys(routers, pathname) {
+        var arr1 = [];
+        routers.forEach(item => {
+            if (JSON.stringify(item).indexOf(pathname) !== -1) {
+                arr1.push(item);
+            }
+        });
+
+        function find(arr, fn, result) {
+            arr.forEach(item => {
+                if (item.child.length) {
+                    find(item.child, fn, result);
+                } else {
+                    if (fn(item)) {
+                        result.push(item);
+                    }
+                }
+            });
+
+            console.log(result)
+        }
+        var result = [];
+        find(
+            arr1,
+            item => {
+                return item.path === pathname;
+            },
+            result
+        );
+
+        // console.log(result)
+    }
+
+    componentDidMount() {}
+
     render() {
-        const { routers } = this.props;
-        console.log(routers);
+        const { routers, location } = this.props;
         return (
             <>
                 <Menu
                     style={{ width: 230 }}
-                    defaultSelectedKeys={[this.state.pathname]}
-                    defaultOpenKeys={[this.state.path]}
                     mode="inline"
                     theme="dark"
                     inlineCollapsed={false}
-                    // openKeys={this.state.openKeys}
-                    // onOpenChange={this.onOpenChange}
+                    defaultSelectedKeys={[location.pathname]}
+                    // defaultOpenKeys={['/menus/two','/menus/two/two-1']}
+                    defaultOpenKeys={this.getDefaultOpenKeys(
+                        routers,
+                        location.pathname
+                    )}
                 >
                     {this.getMenus(routers)}
                 </Menu>

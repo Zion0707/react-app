@@ -58,10 +58,10 @@ const routers = [
                         }),
                         child: [
                             {
-                                path: '/menus/two/two-1/tow-1-1',
+                                path: '/menus/two/two-1/two-1-1',
                                 name: '菜单2-1-1',
                                 component: Loadable({
-                                    loader: () => import('@/pages/menus/two/two-1/tow-1-1'),
+                                    loader: () => import('@/pages/menus/two/two-1/two-1-1'),
                                     loading: LoadDom,
                                 }),
                                 child: [],
@@ -70,7 +70,7 @@ const routers = [
                                 path: '/menus/two/two-1/two-1-2',
                                 name: '菜单2-1-2',
                                 component: Loadable({
-                                    loader: () => import('@/pages/menus/two/two-1/tow-1-2'),
+                                    loader: () => import('@/pages/menus/two/two-1/two-1-2'),
                                     loading: LoadDom,
                                 }),
                                 child: [],
@@ -86,6 +86,44 @@ const routers = [
                         }),
                         child: [],
                     },
+                ],
+            },
+            {
+                path: '/menus/three',
+                name: '菜单3',
+                component: Loadable({
+                    loader: () => import('@/pages/menus/three'),
+                    loading: LoadDom,
+                }),
+                child: [
+                    {
+                        path: '/menus/three/three-1',
+                        name: '菜单3-1',
+                        component: Loadable({
+                            loader: () => import('@/pages/menus/three/three-1'),
+                            loading: LoadDom,
+                        }),
+                        child: [
+                            {
+                                path: '/menus/three/three-1/three-1-1',
+                                name: '菜单3-1-1',
+                                component: Loadable({
+                                    loader: () => import('@/pages/menus/three/three-1/three-1-1'),
+                                    loading: LoadDom,
+                                }),
+                                child: [],
+                            },
+                            {
+                                path: '/menus/three/three-1/three-1-2',
+                                name: '菜单3-1-2',
+                                component: Loadable({
+                                    loader: () => import('@/pages/menus/three/three-1/three-1-2'),
+                                    loading: LoadDom,
+                                }),
+                                child: [],
+                            },
+                        ]
+                    }
                 ],
             },
         ],
