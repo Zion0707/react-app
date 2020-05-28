@@ -54,38 +54,22 @@ class Menus extends Component {
             );
         });
     }
-    //获取当前menus要展开的父级菜单
-    getDefaultOpenKeys(routers, pathname) {
-        var arr1 = [];
-        routers.forEach(item => {
-            if (JSON.stringify(item).indexOf(pathname) !== -1) {
-                arr1.push(item);
+
+    //获取当前menus要展开的向上父级菜单
+    getDefaultOpenKeys(pathname) {
+        var pnArr = pathname.split('/');
+        pnArr.shift();
+        var resArr = [];
+        var prevPath = '';
+        pnArr.forEach((item, key) => {
+            if (pnArr[key + 1] !== undefined) {
+                prevPath +='/' + item;
+                resArr.push(prevPath);
             }
         });
 
-        function find(arr, fn, result) {
-            arr.forEach(item => {
-                if (item.child.length) {
-                    find(item.child, fn, result);
-                } else {
-                    if (fn(item)) {
-                        result.push(item);
-                    }
-                }
-            });
-
-            console.log(result)
-        }
-        var result = [];
-        find(
-            arr1,
-            item => {
-                return item.path === pathname;
-            },
-            result
-        );
-
-        // console.log(result)
+        console.log(resArr);
+        return resArr;
     }
 
     componentDidMount() {}
@@ -98,13 +82,8 @@ class Menus extends Component {
                     style={{ width: 230 }}
                     mode="inline"
                     theme="dark"
-                    inlineCollapsed={false}
                     defaultSelectedKeys={[location.pathname]}
-                    // defaultOpenKeys={['/menus/two','/menus/two/two-1']}
-                    defaultOpenKeys={this.getDefaultOpenKeys(
-                        routers,
-                        location.pathname
-                    )}
+                    defaultOpenKeys={this.getDefaultOpenKeys(location.pathname)}
                 >
                     {this.getMenus(routers)}
                 </Menu>
