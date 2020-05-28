@@ -7,7 +7,7 @@ class Three12 extends Component {
     render() {
         return (
             <>
-                <div>菜单3-1-2</div>
+                <div>菜单三-1-2</div>
             </>
         );
     }

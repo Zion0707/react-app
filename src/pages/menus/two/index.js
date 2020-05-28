@@ -7,7 +7,7 @@ class Two extends Component {
     render() {
         return (
             <>
-                <div>菜单2</div>
+                <div>菜单二</div>
             </>
         );
     }

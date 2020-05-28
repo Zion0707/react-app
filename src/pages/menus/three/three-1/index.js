@@ -7,7 +7,7 @@ class Three1 extends Component {
     render() {
         return (
             <>
-                <div>菜单3-1</div>
+                <div>菜单三-1</div>
             </>
         );
     }
